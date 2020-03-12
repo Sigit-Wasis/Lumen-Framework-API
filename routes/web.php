@@ -22,3 +22,13 @@ $router->get('/', function () use ($router) {
 $router->get('/key', function () {
 	return Str::random(32);
 });
+
+// API Endpoint method HTTP (get)
+$router->get('/foo', function() {
+	return "Hello, GET Method!";
+});
+
+//  API Endpoint method HTTP (post)
+$router->post('/bar', function() {
+	return "Hello, POST Method!";
+});
