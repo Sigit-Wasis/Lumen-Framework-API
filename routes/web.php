@@ -32,3 +32,43 @@ $router->get('/foo', function() {
 $router->post('/bar', function() {
 	return "Hello, POST Method!";
 });
+
+// The route allows you to register routes that respond to any HTTP verb:
+$router->get('/get', function() {
+	return "GET";
+});
+
+$router->post('/post', function() {
+	return "POST";
+});
+
+$router->delete('/delete', function() {
+	return "DELETE";
+});
+
+$router->put('/put', function() {
+	return "PUT";
+});
+
+$router->patch('/patch', function() {
+	return "PATCH";
+});
+
+$router->options('/options', function() {
+	return "OPTIONS";
+});
+
+// Example routing with Parameter Dinamis pad URI
+$router->get('/user/{id}', function ($id) {
+	return "User Kamu: ". $id;
+});
+
+// Routing dengan Parameter Banyak
+$router->get('/post/{postId}/comments/{commentId}', function($postId, $commentId) {
+	return "Post ID = ". $postId ." Dan Comment ID = ". $commentId; 
+});
+
+// Routing dengan Parameter Optional
+$router->get('/optional[/{param}]', function($param = null) {
+	return $param;
+});
