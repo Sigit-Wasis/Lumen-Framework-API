@@ -16,10 +16,10 @@ class ExampleController extends Controller
     {
         // jika ingin salah satu method saja yang akan di middleware
         // maka tambahkan only seperti berikut
-        // $this->middleware('age', ['only' => ['getUser']]);
+        $this->middleware('age', ['only' => ['getUser']]);
         // jika ingin semua method di middleware kecuali untuk method getUser
         // maka dapat menggunakan except seperti berikut
-        // $this->middleware('age', ['except' => ['getUser']]);
+        $this->middleware('age', ['except' => ['getUser']]);
     }
 
     // Method untuk Mengenerate Key
@@ -81,5 +81,38 @@ class ExampleController extends Controller
         return $request->method();
     }
 
-}
+    // get inputan 
+    public function userProfileRequest(Request $request)
+    {
+        $user['name'] = $request->name;
+        $user['username'] = $request->username;
+        $user['password'] = $request->password;
+        $user['email'] = $request->email;
 
+        return $user;
+
+        // Atau dapat melakukan di bawah ini untuk get keseluruhan
+        return $request->all();
+
+        // Untuk memberikan default value seperti berikut
+        return $request->input('name', 'Sigit Wasis Subekti');
+
+        // untuk mengecek apakah ada inputan name maka dengan method has
+        if ($request->has('name', 'email')) {
+            return "success";
+        } else {
+            return "failed";
+        }
+        
+        // untuk mengecek apakah terisi atau tidak maka dengan method filled
+        if ($request->filled('name', 'email')) {
+            return "success";
+        } else {
+            return "failed";
+        }
+
+        // jika hanya ingin menampilkan username dan password maka dengan only
+        return $request->only(['username', 'password']);
+    }
+
+}

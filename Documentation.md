@@ -27,6 +27,7 @@ Jadi buat middleware di app/Http/Middlware/Age.php dan daftarkan middlware di bo
 10. Lumen Controller - Implementasi Middleware pada Controller
 11. Lumen Request  - Menggunakan Request Handler pada Controller
 12. Lumen Request  - Mengambil Nilai Inputan menggunakan request
+13. Lumen Respon - Menampilkan Response dari suatu Request
 
 ### Sumber Referensi
 - [Lumen PHP Framework](https://lumen.laravel.com/)

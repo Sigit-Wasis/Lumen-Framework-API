@@ -128,3 +128,5 @@ $router->get('profile/action', ['as' => 'profile.action', 'uses' => 'ExampleCont
 $router->get('foobar', 'ExampleController@fooBar');
 $router->get('barfoo', 'ExampleController@fooBar');
 
+// route get inputan
+$router->post('user/profile/request', 'ExampleController@userProfileRequest');
