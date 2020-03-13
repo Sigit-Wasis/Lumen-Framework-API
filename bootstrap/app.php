@@ -70,13 +70,18 @@ $app->configure('app');
 |
 */
 
+// Digunakan untuk keseluruhan scope akan memalui middlware ini.
+
 // $app->middleware([
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+// Digunakan untuk beberapa scope saja yang akan memalui middlware ini.
+
+$app->routeMiddleware([
+    'auth' 	=> App\Http\Middleware\Authenticate::class,
+    'age'	=> App\Http\Middleware\Age::class
+]);
 
 /*
 |--------------------------------------------------------------------------

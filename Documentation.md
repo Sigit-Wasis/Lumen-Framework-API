@@ -17,7 +17,16 @@ Berikut 6 jenis Method HTTP:
 
 3. Lumen Route - Memberikan Parameter Dinamis pada URL
 4. Lumen Route - Memberi nama alias pada route
-
+5. Lumen Route - Mengelompokkan Route dengan Method Group
+6. Lumen Middleware - Menggunakan Middleware pada Route
+> Middleware merupakan penengah atau protection antara request dengan respon, Ex: Middleware Age.
+Jadi buat middleware di app/Http/Middlware/Age.php dan daftarkan middlware di bootstrap/app.php.
+7. Lumen Controller - Menggunakan Controller pada Route
+8. Lumen Controller - Menggunakan Parameter dalam Controller
+9. Lumen Controller - Menggunakan name route pada Controller
+10. Lumen Controller - Implementasi Middleware pada Controller
+11. Lumen Request  - Menggunakan Request Handler pada Controller
+12. Lumen Request  - Mengambil Nilai Inputan menggunakan request
 
 ### Sumber Referensi
 - [Lumen PHP Framework](https://lumen.laravel.com/)
