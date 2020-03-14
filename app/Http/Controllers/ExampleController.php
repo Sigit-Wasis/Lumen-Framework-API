@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 // Import Helper Str untuk Generate
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ExampleController extends Controller
 {
@@ -113,6 +114,20 @@ class ExampleController extends Controller
 
         // jika hanya ingin menampilkan username dan password maka dengan only
         return $request->only(['username', 'password']);
+    }
+
+    public function response()
+    {
+        $data['status'] = "Success";
+        // make response dengan dengan status, type status dll
+        return (new Response($data, 201))
+                ->header('Content-Type', 'application/json'); 
+
+        // atau dapat menggunakan helper response
+        return response()->json([
+            'message'   => 'Failed Not Found!',
+            'status'    => false
+        ], 404);
     }
 
 }

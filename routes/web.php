@@ -108,7 +108,7 @@ $router->get('fail', function() {
 });
 
 // Mengenerate Key dengan menggunakan controller 
-$router->get('keys', 'ExampleController@generateKey');
+$router->get('keys/go', 'ExampleController@generateKey');
 
 // Mengenerate Key dengan menggunakan controller method POST
 // Menjalankan method POST dengan menggunakan Postman
@@ -130,3 +130,6 @@ $router->get('barfoo', 'ExampleController@fooBar');
 
 // route get inputan
 $router->post('user/profile/request', 'ExampleController@userProfileRequest');
+
+// route untuk response dari suatu request
+$router->get('response', 'ExampleController@response');
